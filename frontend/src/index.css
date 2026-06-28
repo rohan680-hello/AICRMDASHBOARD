@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+/* DealFlow AI CRM design tokens */
+@theme {
+  /* Brand teal scale */
+  --color-brand-50: #eefcf8;
+  --color-brand-100: #d5f6ee;
+  --color-brand-200: #aeeade;
+  --color-brand-300: #78d9c8;
+  --color-brand-400: #3fbfaa;
+  --color-brand-500: #249f8d;
+  --color-brand-600: #167f72;
+  --color-brand-700: #12665d;
+  --color-brand-800: #10524c;
+  --color-brand-900: #0e443f;
+
+  /* Semantic surfaces — white canvas, cards defined by a hairline + shadow */
+  --color-canvas: #fbfdfc;
+  --color-surface: #ffffff;
+  --color-surface-muted: #f3f7f5;
+  --color-ink: #10201d;
+  --color-ink-soft: #687874;
+  --color-line: #e3ebe8;
+
+  /* Typography */
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Sora", "Inter", system-ui, sans-serif;
+
+  /* Radii & shadows — soft, rounded SaaS feel */
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-3xl: 2rem;
+  --shadow-card: 0 1px 2px rgba(16, 32, 29, 0.04), 0 8px 24px -12px rgba(16, 32, 29, 0.14);
+  --shadow-soft: 0 1px 3px rgba(16, 32, 29, 0.06), 0 1px 2px rgba(16, 32, 29, 0.04);
+  --shadow-pop: 0 12px 40px -12px rgba(16, 32, 29, 0.28);
+}
+
+/* Base resets ─────────────────────────────────────────────── */
+* {
+  border-color: var(--color-line);
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Headings use the display font for a more premium, branded feel */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+/* Custom slim scrollbars to match the polished aesthetic */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #d4d8d5;
+  border-radius: 999px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #b9bfba;
+  background-clip: content-box;
+}
+
+/* Reusable utility layer */
+@layer utilities {
+  .card {
+    background: var(--color-surface);
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow-card);
+  }
+  .brand-gradient {
+    background-image: linear-gradient(
+      135deg,
+      #14b8a6,
+      #0f766e 58%,
+      #f59e0b
+    );
+  }
+  .brand-gradient-hover:hover {
+    background-image: linear-gradient(
+      135deg,
+      #0d9488,
+      #115e59 58%,
+      #d97706
+    );
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-up {
+    animation: fade-up 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+}

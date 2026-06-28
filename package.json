@@ -1,0 +1,14 @@
+{
+  "name": "ai-crm-dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Full-stack AI CRM dashboard with a React frontend and Express backend.",
+  "scripts": {
+    "install:all": "npm install --prefix frontend && npm install --prefix backend",
+    "dev:frontend": "npm run dev --prefix frontend",
+    "dev:backend": "npm run dev --prefix backend",
+    "build": "npm run build --prefix frontend",
+    "lint": "npm run lint --prefix frontend",
+    "check:backend": "node --check backend/server.js"
+  }
+}
