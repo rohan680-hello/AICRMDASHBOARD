@@ -2,6 +2,14 @@
 
 A full-stack CRM dashboard built with a Vite React frontend and an Express/MongoDB backend. The app includes dashboard analytics, leads, contacts, notes, tasks, authentication screens, and AI-oriented CRM workflows.
 
+## Live Deployment
+
+- Frontend: https://aicrmdashboard.vercel.app
+- Backend API: https://aicrmdashboard3.onrender.com
+- Backend health check: https://aicrmdashboard3.onrender.com/api/health
+
+The backend is deployed on Render's free instance tier, so the first request after inactivity can take a little longer while the service wakes up.
+
 ## Project Structure
 
 ```text
@@ -117,7 +125,7 @@ Frontend deployment settings:
 - Root directory: `frontend`
 - Build command: `npm run build`
 - Output directory: `dist`
-- Environment variable: `VITE_API_URL=https://your-backend-url/api`
+- Environment variable: `VITE_API_URL=https://aicrmdashboard3.onrender.com/api`
 
 Backend deployment settings:
 
